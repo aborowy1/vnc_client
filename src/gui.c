@@ -124,20 +124,21 @@ void gui_init(){
   connectBtn = GTK_WIDGET(gtk_builder_get_object(builder, "connectBtn"));
   gtk_widget_set_sensitive(GTK_WIDGET(connectBtn), FALSE);
   g_signal_connect(connectBtn, "clicked", G_CALLBACK(gui_show_connecting), NULL);
+  //g_signal_connect(connectBtn, "clicked", G_CALLBACK(gui_show_vnc), NULL);
 
   passwordEntry = GTK_WIDGET(gtk_builder_get_object(builder, "passwordEntry"));
+  gtk_widget_modify_font(passwordEntry, pango_font_description_from_string("Ubuntu Medium 20"));
 
   unlockBtn = GTK_WIDGET(gtk_builder_get_object(builder, "unlockBtn"));
   g_signal_connect(unlockBtn, "clicked", G_CALLBACK(gui_show_connecting), NULL);
 
   cancelBtn = GTK_WIDGET(gtk_builder_get_object(builder, "cancelBtn"));
   g_signal_connect(cancelBtn, "clicked", G_CALLBACK(gui_show_ip_entry), NULL);
-
-  gtk_widget_show_all(window);
 }
 
 
 void gui_start(){
+  gtk_widget_show_all(window);
   gtk_main();
 }
 

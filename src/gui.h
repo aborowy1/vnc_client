@@ -7,6 +7,11 @@
 #include <stdlib.h>
 
 extern GtkWidget *viewVnc;
+extern GtkWidget *connectBtn;
+extern GtkWidget *cancelBtn;
+extern GtkWidget *window;
+
+extern GString *ip_address;
 
 void gui_init();
 void gui_start();

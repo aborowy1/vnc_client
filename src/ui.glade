@@ -543,7 +543,7 @@
                                               <object class="GtkImage">
                                                 <property name="visible">True</property>
                                                 <property name="can-focus">False</property>
-                                                <property name="pixbuf">icons/unlock.svg</property>
+                                                <property name="pixbuf">icons/cancel.svg</property>
                                               </object>
                                               <packing>
                                                 <property name="expand">False</property>
@@ -620,7 +620,7 @@
             </child>
           </object>
           <packing>
-            <property name="expand">False</property>
+            <property name="expand">True</property>
             <property name="fill">True</property>
             <property name="position">1</property>
           </packing>
