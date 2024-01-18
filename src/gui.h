@@ -8,6 +8,7 @@
 
 extern GtkWidget *viewVnc;
 extern GtkWidget *connectBtn;
+extern GtkWidget *unlockBtn;
 extern GtkWidget *cancelBtn;
 extern GtkWidget *window;
 

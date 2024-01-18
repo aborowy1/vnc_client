@@ -5,13 +5,13 @@
 GtkWidget *vnc;
 //GtkWidget *display;
 
+gboolean password_is_needed = FALSE;
+gchar *password = "";
 gboolean connected = FALSE;
 
 void vnc_disconnect(){
-  if(connected != FALSE){
-    g_print("Disconnecting...\n");
-    vnc_display_close(VNC_DISPLAY(vnc));
-  }
+  g_print("Disconnecting...\n");
+  vnc_display_close(VNC_DISPLAY(vnc));
   connected = FALSE;
 }
 
@@ -30,6 +30,7 @@ static void vnc_auth_failure(GtkWidget *vncdisplay G_GNUC_UNUSED){
 
 static void vnc_error(GtkWidget *vncdisplay G_GNUC_UNUSED){
   g_print("Error\n");
+  connected = FALSE;
 }
 
 static void vnc_auth_credential(GtkWidget *vncdisplay, GValueArray *credList){
@@ -41,7 +42,7 @@ static void vnc_auth_credential(GtkWidget *vncdisplay, GValueArray *credList){
     switch (g_value_get_enum(cred)){
       case VNC_DISPLAY_CREDENTIAL_USERNAME:
       case VNC_DISPLAY_CREDENTIAL_PASSWORD:
-        data[i] = "solaris";
+        data[i] = password;
         break;
       default:
         continue;
@@ -55,6 +56,7 @@ static void vnc_auth_credential(GtkWidget *vncdisplay, GValueArray *credList){
     }
   }
 }
+
 
 void vnc_connect(GtkWidget *button, GString *ip_address){
   g_print("connecting to %s\n", ip_address->str);
