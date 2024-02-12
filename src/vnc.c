@@ -1,12 +1,9 @@
 #include "vnc.h"
-
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
 GtkWidget *vnc;
-//GtkWidget *display;
 
 gboolean password_is_needed = FALSE;
-gchar *password = "";
 gboolean connected = FALSE;
 
 void vnc_disconnect(){
@@ -42,7 +39,7 @@ static void vnc_auth_credential(GtkWidget *vncdisplay, GValueArray *credList){
     switch (g_value_get_enum(cred)){
       case VNC_DISPLAY_CREDENTIAL_USERNAME:
       case VNC_DISPLAY_CREDENTIAL_PASSWORD:
-        data[i] = password;
+        data[i] = password->str;
         break;
       default:
         continue;
@@ -57,9 +54,8 @@ static void vnc_auth_credential(GtkWidget *vncdisplay, GValueArray *credList){
   }
 }
 
-
-void vnc_connect(GtkWidget *button, GString *ip_address){
-  g_print("connecting to %s\n", ip_address->str);
+void vnc_connect(GtkWidget *button){
+  g_print("Connecting to %s\n", ip_address->str);
   gtk_widget_realize(vnc);
   vnc_display_set_allow_resize(VNC_DISPLAY(vnc), TRUE);
   vnc_display_set_scaling(VNC_DISPLAY(vnc), TRUE);

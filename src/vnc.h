@@ -6,13 +6,18 @@
 #include <vncutil.h>
 #include <glib.h>
 
+#include "gui.h"
+
 extern GtkWidget *vnc;
 extern gboolean password_is_needed;
-extern gchar *password;
+extern GString *password;
 extern gboolean connected;
 
+
+
+
 void vnc_init();
-void vnc_connect(GtkWidget *button, GString *ip_address);
+void vnc_connect(GtkWidget *button);
 void vnc_disconnect();
 
 #endif
