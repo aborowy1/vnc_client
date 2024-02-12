@@ -38,6 +38,7 @@ static void vnc_auth_credential(GtkWidget *vncdisplay, GValueArray *credList){
     GValue *cred = g_value_array_get_nth(credList, i);
     switch (g_value_get_enum(cred)){
       case VNC_DISPLAY_CREDENTIAL_USERNAME:
+        break;
       case VNC_DISPLAY_CREDENTIAL_PASSWORD:
         data[i] = password->str;
         break;

@@ -91,6 +91,7 @@ void gui_show_vnc(){
 //gui init
 void gui_init(){
   ip_address = g_string_new("");
+  password = g_string_new("");
 
   builder = gtk_builder_new_from_file("./ui.glade");
 
