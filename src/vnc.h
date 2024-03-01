@@ -13,9 +13,6 @@ extern gboolean password_is_needed;
 extern GString *password;
 extern gboolean connected;
 
-
-
-
 void vnc_init();
 void vnc_connect(GtkWidget *button);
 void vnc_disconnect();

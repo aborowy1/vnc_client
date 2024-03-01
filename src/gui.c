@@ -22,11 +22,13 @@ GString *password;
 GtkWidget *viewVnc;
 
 //update ip_address value
-void gui_get_ip_address(){
+void gui_get_credentials(){
   g_string_printf(ip_address, "%s.%s.%s.%s",    gtk_entry_get_text(GTK_ENTRY(ipEntry1)),
                                                 gtk_entry_get_text(GTK_ENTRY(ipEntry2)),
                                                 gtk_entry_get_text(GTK_ENTRY(ipEntry3)),
                                                 gtk_entry_get_text(GTK_ENTRY(ipEntry4)));
+
+  g_string_printf(password, "%s", gtk_entry_get_text(GTK_ENTRY(passwordEntry)));
 }
 
 //check if provided ip address is correct - correct if not
@@ -52,7 +54,7 @@ void gui_ip_check(GtkWidget *ipEntryX){
     gtk_entry_set_text(GTK_ENTRY(ipEntryX),input->str);
   }
 
-  gui_get_ip_address();
+  //gui_get_credentials();
 
   if (  gtk_entry_get_text_length(GTK_ENTRY(ipEntry1))  != 0 &&
         gtk_entry_get_text_length(GTK_ENTRY(ipEntry2))  != 0 &&
@@ -79,6 +81,7 @@ void gui_show_password_entry(){
 
 //show connecting view
 void gui_show_connecting(){
+  gui_get_credentials();
   gtk_stack_set_visible_child(GTK_STACK(gtk_builder_get_object(builder, "mainStack")), GTK_WIDGET(gtk_builder_get_object(builder, "viewPrepareToConnect")));
   gtk_stack_set_visible_child(GTK_STACK(gtk_builder_get_object(builder, "connectingStack")), GTK_WIDGET(gtk_builder_get_object(builder, "connecting")));
 }
