@@ -14,10 +14,14 @@ How to use?
 1. Compile application
 2. Open application
 3. Provide target IP address
-4. Click "Connect"
-5. Provide password if any, if no need of password leave empty
-6. Click "Unlock"
-7. To disconnect close an app
+![obraz](https://github.com/aborowy1/vnc_client/assets/72155321/01b0ca4c-fe09-4e8f-bd62-82267d00e703)
+5. Click "Connect"
+6. Provide password if any, if no need of password leave empty
+![obraz](https://github.com/aborowy1/vnc_client/assets/72155321/d4780cbf-14b4-4298-a1e4-492c25d3bf28)
+8. Click "Unlock"
+9. Wait for connection
+![obraz](https://github.com/aborowy1/vnc_client/assets/72155321/54087714-b330-49e2-aa35-2ac24402d7d9)
+10. To disconnect close an app
 
 To do in the future:
 - option to change port,
