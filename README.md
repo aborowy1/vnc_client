@@ -5,6 +5,11 @@ It's an VNC client used to connect to machine that are providing VNC server conn
 Port may be changed in source. Currently it's static.
 Application is based on GTK3 and gtk-vnc libraries. It uses dynamically linked libraries so thoselibraries are a must on target device.
 
+Useful links:
+https://docs.gtk.org/gtk3/
+https://wiki.gnome.org/Projects/gtk-vnc
+https://lazka.github.io/pgi-docs/GtkVnc-2.0/index.html
+
 How to use?
 1. Compile application
 2. Open application
